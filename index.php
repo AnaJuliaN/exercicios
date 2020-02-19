@@ -11,6 +11,6 @@
 <body>
     <h1>Página com links dos meus exercícios</h1>
     <br />
-    <a href='20200219'>20200219 - Barbearia</a>
+    <a href='20200219/Barbearia'>20200219 - Barbearia</a>
 </body>
 </html>
