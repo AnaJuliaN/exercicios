@@ -22,7 +22,7 @@
                 <form action="form_agendamento.php"> 
                     <footer>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-danger">Clique aqui para agendar seu horario!</button>
+                            <button type="submit" class="btn btn-danger">Clique aqui para agendar seu horário!</button>
                         </div>
                     </footer>
                 </form>
