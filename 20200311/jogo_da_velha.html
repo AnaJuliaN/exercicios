@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Jogo da Velha</title>
+    <style>
+        input{width:30px; text-align:center;}
+        table{border:1px solid;}
+    </style>
+    <script>
+        var jogada = 1;
+        var ganhador = -1;
+        var cont = 1;
+        function funcao_validar(objeto){
+            document.getElementById('msg').innerHTML = cont;
+            console.log(cont)
+            if(cont%2 == 1 && jogo.value == "X"){
+                cont ++;
+                objeto.setAttribute("readonly", "readonly");
+                valida_jogo();
+            }else if(cont%2 == 0 && jogo.value == "0"){
+                cont ++;
+                objeto.setAttribute("readonly", "readonly");
+                valida_jogo();
+            }else{
+                objeto.value = "";
+                alert('Jogada Invalida!');
+            }
+                    
+        }
+
+        function valida_jogo(){
+            x1 = document.getElementById('x1').value;
+            x2 = document.getElementById('x2').value;
+            x3 = document.getElementById('x3').value;
+            x4 = document.getElementById('x4').value;
+            x5 = document.getElementById('x5').value;
+            x6 = document.getElementById('x6').value;
+            x7 = document.getElementById('x7').value;
+            x8 = document.getElementById('x8').value;
+            x9 = document.getElementById('x9').value;
+
+            if((x1 == x2 && x2 == x3 && x3 != "") || (x4 == x5 && x5 == x6 && x6 != "") || (x7 == x8 && x8 == x9 && x9 != "")){
+                alert('O vencedor é o ' + vencedor);
+                window.location.reload();
+            }else if(jogada == 10){
+                alert('O jogo empatou !');
+                window.location.reload();
+            }
+
+            if((x1 == x4 && x4 == x7 && x7 != "") || (x2 == x5 && x5 == x8 && x8 != "") || (x3 == x6 && x6 == x9 && x9 != "")){
+                alert('O vencedor é o ' + vencedor);
+                window.location.reload();
+            }else if(jogada == 10){
+                alert('O jogo empatou !');
+                window.location.reload();
+            }
+
+            if((x1 == x5 && x5 == x9 && x9 != "") || (x3 == x5 && x5 == x7 && x7 != "")){
+                alert('O vencedor é o ' + vencedor);
+                window.location.reload();
+            }else if(jogada == 10){
+                alert('O jogo empatou !');
+                window.location.reload();
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>
+        Jogada:
+        <spam id="msg">1</spam>
+    </h1>
+    <form name="f" if="form">
+    <table border='1' name='t'>
+        <tr>
+            <td><input type="text" name="x1" onblur="funcao_validar(this);"/></td>
+            <td><input type="text" name="x2" onblur="funcao_validar(this);"/></td>
+            <td><input type="text" name="x3" onblur="funcao_validar(this);"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="x4" onblur="funcao_validar(this);"/></td>
+            <td><input type="text" name="x5" onblur="funcao_validar(this);"/></td>
+            <td><input type="text" name="x6" onblur="funcao_validar(this);"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="x7" onblur="funcao_validar(this);"/></td>
+            <td><input type="text" name="x8" onblur="funcao_validar(this);"/></td>
+            <td><input type="text" name="x9" onblur="funcao_validar(this);"/></td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
